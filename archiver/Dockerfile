@@ -2,7 +2,7 @@ FROM node:20-alpine
 
 RUN apk update && apk add --no-cache build-base git
 
-ARG STATE_SCAN_META_GIT_REPO="https://github.com/opensquare-network/statescan-v2.git"
+ARG STATE_SCAN_META_GIT_REPO="https://github.com/opensquare-network/blockmeta.git"
 ARG STATE_SCAN_META_GIT_TAG="main"
 RUN git clone --depth 1 --recurse-submodules --shallow-submodules -j 8 -b ${STATE_SCAN_META_GIT_TAG} ${STATE_SCAN_META_GIT_REPO} /opt/blockmeta
 
